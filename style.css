@@ -1,3 +1,1079 @@
+
+/*
+ * Este archivo CSS contiene los estilos consolidados y mejorados
+ * para los documentos del proyecto (Indicativo Estaciones, Directorio Principal, Formulario Datos de Ley, etc.).
+ *
+ * Incluye:
+ * - Importación de fuentes externas (Roboto y Poppins).
+ * - Un reset básico para asegurar consistencia entre navegadores.
+ * - Estilos generales del cuerpo de la página y contenedores principales.
+ * - Estilos específicos de la cabecera y su navegación.
+ * - Estilos para diferentes niveles de encabezados (h1, h2, h3, h4) con una jerarquía visual clara.
+ * - Estilos para listas (ordenadas y no ordenadas, incluyendo la lista de botones del directorio).
+ * - Estilos para botones con un diseño específico y responsivo.
+ * - Estilos para elementos de formulario (inputs, labels, selects, textareas, y estructura del formulario).
+ * - Estilos para una galería de imágenes.
+ * - Media Queries para adaptar el diseño a diferentes tamaños de pantalla (móviles, tablets, escritorio).
+ *
+ * Se ha utilizado una paleta de colores basada en azules con un color de acento (rojo)
+ * y tipografía (Poppins para títulos, Roboto para cuerpo) para una apariencia coherente y agradable.
+ * Se han realizado ajustes para mejorar el bloque de botones del index principal
+ * y se han corregido problemas de espaciado y diferenciación en las entradas dinámicas del formulario.
+ */
+
+/* --- Importación de Fuentes de Google --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* --- Clases de Fuente (Manteniéndolas tal cual) --- */
+.roboto-thin { font-family: "Roboto", serif; font-weight: 100; font-style: normal; }
+.roboto-light { font-family: "Roboto", serif; font-weight: 300; font-style: normal; }
+.roboto-regular { font-family: "Roboto", serif; font-weight: 400; font-style: normal; }
+.roboto-medium { font-family: "Roboto", serif; font-weight: 500; font-style: normal; }
+.roboto-bold { font-family: "Roboto", serif; font-weight: 700; font-style: normal; }
+.roboto-black { font-family: "Roboto", serif; font-weight: 900; font-style: normal; }
+.roboto-thin-italic { font-family: "Roboto", serif; font-weight: 100; font-style: italic; }
+.roboto-light-italic { font-family: "Roboto", serif; font-weight: 300; font-style: italic; }
+.roboto-regular-italic { font-family: "Roboto", serif; font-weight: 400; font-style: italic; }
+.roboto-medium-italic { font-family: "Roboto", serif; font-weight: 500; font-style: italic; }
+.roboto-bold-italic { font-family: "Roboto", serif; font-weight: 700; font-style: italic; }
+.roboto-black-italic { font-family: "Roboto", serif; font-weight: 900; font-style: italic; }
+.poppins-thin { font-family: "Poppins", serif; font-weight: 100; font-style: normal; }
+.poppins-extralight { font-family: "Poppins", serif; font-weight: 200; font-style: normal; }
+.poppins-light { font-family: "Poppins", serif; font-weight: 300; font-style: normal; }
+.poppins-regular { font-family: "Poppins", serif; font-weight: 400; font-style: normal; }
+.poppins-medium { font-family: "Poppins", serif; font-weight: 500; font-style: normal; }
+.poppins-semibold { font-family: "Poppins", serif; font-weight: 600; font-style: normal; }
+.poppins-bold { font-family: "Poppins", serif; font-weight: 700; font-style: normal; }
+.poppins-extrabold { font-family: "Poppins", serif; font-weight: 800; font-style: normal; }
+.poppins-black { font-family: "Poppins", serif; font-weight: 900; font-style: normal; }
+.poppins-thin-italic { font-family: "Poppins", serif; font-weight: 100; font-style: italic; }
+.poppins-extralight-italic { font-family: "Poppins", serif; font-weight: 200; font-style: italic; }
+.poppins-light-italic { font-family: "Poppins", serif; font-weight: 300; font-style: italic; }
+.poppins-regular-italic { font-family: "Poppins", serif; font-weight: 400; font-style: italic; }
+.poppins-medium-italic { font-family: "Poppins", serif; font-weight: 500; font-style: italic; }
+.poppins-semibold-italic { font-family: "Poppins", serif; font-weight: 600; font-style: italic; }
+.poppins-bold-italic { font-family: "Poppins", serif; font-weight: 700; font-style: italic; }
+.poppins-extrabold-italic { font-family: "Poppins", serif; font-weight: 800; font-style: italic; }
+.poppins-black-italic { font-family: "Poppins", serif; font-weight: 900; font-style: italic; }
+
+/* --- Reset Básico --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Estilos Generales del Cuerpo y Contenedores --- */
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    margin: 10px;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.6;
+    font-size: 1em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container { /* Estilo para contenedores generales tipo tarjeta */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+}
+
+section { /* Fondo sutil para secciones */
+    background: rgba(0, 123, 255, 0.05);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.linea { /* Estilo para una línea o divisor específico */
+    height: 100%;
+    width: 100%;
+    background-color: #007bff;
+}
+
+u { /* Estilo para la etiqueta de subrayado */
+    text-decoration: underline;
+}
+
+/* --- Estilos de Cabecera --- */
+header {
+    background: linear-gradient(90deg, #007bff 0%, #0a58ca 47%, #007bff 87%);
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    padding: 15px 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+header .datos { /* Estilo para el h1 dentro de la cabecera */
+    font-family: "Poppins", sans-serif;
+    font-size: 2em;
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-weight: 700;
+}
+
+header .nav_1 { /* Contenedor de enlaces de navegación en la cabecera */
+    padding: 0;
+    background: rgba(0, 123, 255, 0.1);
+    border-radius: 5px;
+    padding: 5px 0;
+}
+
+header .nav_1 a { /* Estilo para los enlaces de navegación */
+    color: inherit;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1em;
+    transition: text-decoration 0.3s ease;
+}
+
+header .nav_1 a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- Estilos de Títulos --- */
+h1 { /* Estilo para h1 general y ahora el título del formulario */
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    color: #007bff;
+    text-align: center;
+    padding: 15px 10px;
+    margin-bottom: 25px;
+    font-size: 2.2em;
+    border-bottom: 2px solid #e9ecef;
+}
+
+/* Clase específica para el título del formulario para diferenciarlo del h1 general si es necesario */
+.form-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    color: #212529;
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+
+h2 { /* Estilo para títulos de sección general */
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #dc3545;
+    border-bottom: 1px solid #dc3545;
+    padding: 10px 0;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+/* Estilo para títulos H2 dentro de las secciones del formulario */
+.form-section h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #212529;
+    border-bottom: none;
+    padding: 0;
+}
+
+/* Estilo para títulos H3 dentro de las entradas dinámicas (Víctima 1, Datos 954 2, etc.) */
+.victim-entry h3,
+.data954-entry h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2em; /* Tamaño ligeramente menor */
+    font-weight: 600;
+    color: #007bff; /* Color azul primario */
+    margin-bottom: 1rem; /* Espacio debajo del título */
+    padding-bottom: 5px; /* Espacio interno */
+    border-bottom: 1px solid rgba(0, 123, 255, 0.3); /* Borde inferior azul sutil */
+}
+
+
+h3 { /* Estilo para subtítulos de sección (general) - Aseguramos que no afecte a h3 dentro de entradas dinámicas */
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #0d6efd;
+    border-bottom: 1px solid #0d6efd;
+    padding: 8px 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+h4 { /* Estilo para títulos de sub-subsección, etc. */
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: #6c757d;
+    border-bottom: 1px solid #6c757d;
+    padding: 6px 0;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-size: 1.2em;
+}
+
+
+/* --- Estilos de Enlaces Genéricos --- */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #0a58ca;
+    text-decoration: underline;
+}
+
+
+/* --- Estilos de Listas --- */
+/* Estilo para listas no ordenadas (usado en el directorio principal para los botones) */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Aumentado el espacio entre botones */
+    justify-content: center;
+}
+
+/* Estilo para cada elemento de lista no ordenada (contenedor de un botón) */
+ul li {
+    margin-bottom: 0;
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 100%; /* Base móvil */
+    /* El ancho en pantallas más grandes se define en las media queries */
+}
+
+/* Estilo para listas ordenadas (usado en Indicativo Estaciones) */
+ol {
+    padding-left: 20px;
+}
+
+/* Estilo para cada elemento de lista ordenada */
+ol li {
+    margin-bottom: 8px;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 5px;
+    padding: 5px 0;
+    border-bottom: 1px dashed #e9ecef;
+}
+
+/* Elimina el borde inferior del último elemento de la lista ordenada */
+ol li:last-child {
+    border-bottom: none;
+}
+
+/* Espacio a la derecha del checkbox en la lista ordenada */
+ol li input[type="checkbox"] { margin-right: 8px; }
+
+
+/* --- Estilos de Botones (Responsivos con diseño mejorado) --- */
+/* Estilo general para el botón primario (usado en el formulario) */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, #007bff 5%, #0a58ca 100%);
+    background-color: #007bff;
+    border: 1px solid #0a58ca;
+    color: #fff;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    text-shadow: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease-in-out;
+}
+
+/* Estilo de botón primario al pasar el ratón (hover) */
+.btn-primary:hover {
+    background: linear-gradient(to bottom, #0a58ca 5%, #007bff 100%);
+    background-color: #0a58ca;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Estilo de botón primario al ser activado (click) */
+.btn-primary:active {
+    position:relative;
+    top:1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+}
+
+/* Estilo para el botón secundario (ej: borrar datos en formulario, agregar/eliminar entradas) */
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 20px;
+    font-size: 1em;
+    font-weight: 500;
+    color: #555;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    border: 1px solid #ced4da;
+}
+
+/* Estilo de botón secundario al pasar el ratón (hover) */
+.btn-secondary:hover {
+    background-color: #dee2e6;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+    transform: translateY(-1px);
+}
+
+/* Estilo de botón secundario al ser activado (click) */
+.btn-secondary:active {
+    position:relative;
+    top:1px;
+    background-color: #ced4da;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
+    transform: translateY(0);
+}
+
+/* Estilo específico para los botones de agregar (+) */
+.btn-secondary.add-button {
+    margin-top: 15px; /* Espacio arriba del botón agregar */
+    width: auto; /* Ancho automático */
+    text-align: center; /* Centra el texto */
+    justify-content: center; /* Centra el contenido flex */
+    display: flex; /* Asegura flex para centrado */
+}
+
+
+/* Estilo para los iconos dentro de los botones primarios y secundarios */
+.btn-primary .icon,
+.btn-secondary .icon {
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 8px;
+}
+
+/* --- Estilos Específicos para los Botones en la Lista del Directorio Principal (ul li button) --- */
+ul li button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 15px 25px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #fff;
+    background: linear-gradient(to right, #007bff 0%, #0a58ca 100%);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease-in-out;
+}
+
+ul li button:hover {
+    background: linear-gradient(to right, #0a58ca 0%, #007bff 100%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+ul li button:active {
+    position:relative;
+    top:0px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+}
+
+
+ul li button a {
+     width: 100%;
+     color: inherit;
+     text-decoration: none;
+     display: flex;
+     align-items: center;
+}
+
+ul li button .logo-button {
+    width: 25px;
+    height: auto;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+
+/* --- Estilos de Formularios --- */
+/* Estilo para el contenedor principal del formulario, usa los estilos de .container */
+.form-container {
+    max-width: 800px;
+    margin: auto;
+    /* Padding, border-radius, box-shadow, margin-bottom vienen de .container */
+}
+
+/* Estilos para los contenedores de las entradas dinámicas (Víctima, Datos 954) */
+.victim-entry,
+.data954-entry {
+    background-color: #eef2f6; /* Fondo gris azulado muy claro */
+    border: 1px solid #ced4da; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    margin-bottom: 20px; /* Espacio debajo de cada entrada */
+}
+
+/* Estilo para el separador horizontal dentro de las entradas dinámicas */
+.victim-entry hr,
+.data954-entry hr {
+    border: none; /* Elimina el borde por defecto */
+    height: 1px; /* Grosor de la línea */
+    background-color: #dee2e6; /* Color gris suave */
+    margin: 20px 0; /* Espacio vertical alrededor del separador */
+}
+
+
+/* Estilo para las secciones dentro del formulario */
+.form-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #dee2e6;
+}
+.form-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* Estilo para los títulos H2 dentro de las secciones del formulario (se definió arriba) */
+
+
+/* Estilo para los grupos de campo (label + input) */
+.form-group {
+    margin-bottom: 1rem; /* Reducido el espacio entre campos */
+}
+
+/* Estilo para las etiquetas de los campos del formulario */
+.form-group label {
+    display: block;
+    font-size: 0.875em;
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+/* Estilo general para campos de entrada de texto, select, textarea, etc. */
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1em;
+    font-family: "Roboto", Arial, sans-serif;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    color: #495057;
+    background-color: #fff;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Estilo para campos al enfocar */
+.form-control:focus {
+    outline: none;
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Estilos específicos para los campos de selección (select) */
+.form-select {
+     display: block;
+     width: 100%;
+     padding: 0.75rem 2.5rem 0.75rem 0.75rem;
+     font-size: 1em;
+     font-family: "Roboto", Arial, sans-serif;
+     color: #495057;
+     background-color: #fff;
+     border: 1px solid #ced4da;
+     border-radius: 0.375rem;
+     appearance: none;
+     /* Flecha personalizada con SVG base64 */
+     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23343a40' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M6 9l4 4 4-4'%3e%3c/path%3e%3c/svg%3e");
+     background-repeat: no-repeat;
+     background-position: right 0.75rem center;
+     background-size: 1rem;
+     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Estilo para select al enfocar */
+.form-select:focus {
+    outline: none;
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Estilo para el área de texto (textarea) */
+.textarea {
+    resize: vertical;
+    min-height: 4rem;
+    /* Otros estilos heredados de .form-control */
+}
+
+/* Estilo para el grupo de botones de acción del formulario */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.button-group .btn-primary,
+.button-group .btn-secondary {
+    flex-grow: 1;
+    text-align: center;
+    justify-content: center;
+}
+
+
+/* --- Estilos de Previsualización --- */
+.preview-container {
+    background-color: #e9ecef;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    margin-top: 1.5rem;
+}
+
+.preview-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #343a40;
+    margin-bottom: 0.75rem;
+}
+
+#preview {
+    width: 100%;
+    min-height: 8rem;
+    resize: vertical;
+    font-family: monospace;
+    font-size: 0.875em;
+    color: #495057;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    outline: none;
+    display: block;
+}
+
+
+/* --- Estilos de Galería de Imágenes --- */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.img-container {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 5px;
+}
+
+.img-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    border-radius: 4px;
+}
+
+.img-container img:hover {
+    transform: scale(1.05);
+}
+
+
+/* --- Media Queries para Responsividad --- */
+
+/* Pantallas pequeñas (max-width: 600px) */
+@media (max-width: 600px) {
+    body {
+        margin: 5px;
+        font-size: 0.9em;
+    }
+    .container {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    section {
+         padding: 10px;
+         margin-bottom: 20px;
+    }
+    h1 { font-size: 1.8em; padding: 10px 8px; margin-bottom: 20px; }
+    .form-title { font-size: 1.6em; margin-bottom: 20px; padding-bottom: 8px; }
+    h2 { font-size: 1.4em; padding: 8px 0; margin-top: 20px; margin-bottom: 10px; }
+    /* .form-section h2 styles are fine here */
+
+    /* Ajuste tamaño y margen de h3 en entradas dinámicas en móvil */
+    .victim-entry h3,
+    .data954-entry h3 {
+        font-size: 1.1em;
+        margin-bottom: 0.8rem;
+    }
+
+    h3 { font-size: 1.2em; padding: 6px 0; margin-top: 15px; margin-bottom: 8px; }
+    h4 { font-size: 1.1em; padding: 4px 0; margin-top: 10px; margin-bottom: 6px; }
+
+    /* ul li ya tiene width: 100% por defecto */
+    ul li button {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+     ul li button .logo-button {
+        width: 20px;
+        margin-right: 10px;
+     }
+
+    /* Ajustes para la cabecera en móviles */
+    header {
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 25px;
+    }
+    header .datos {
+        font-size: 1.6em;
+        margin-bottom: 5px;
+    }
+    header .nav_1 {
+        padding: 3px 0;
+    }
+    header .nav_1 a {
+        margin: 0 5px;
+        font-size: 0.9em;
+    }
+
+    /* Ajustes para elementos de lista ordenada en móviles (apilados) */
+    ol { padding-left: 15px; }
+    ol li {
+        font-size: 0.9em;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+        padding: 5px 0;
+    }
+    ol li input[type="checkbox"] { margin-bottom: 5px; }
+
+    /* Ajustes para select y textareas en móviles */
+    .funcionario-select {
+        width: 100%;
+        min-width: unset;
+        flex-grow: unset;
+        margin-top: 5px;
+        font-size: 0.9em;
+        padding: 6px;
+    }
+    #listaFuncionarios, #consignasNovedades {
+         min-height: 80px;
+         font-size: 0.9em;
+         padding: 8px;
+    }
+     #consignasNovedades {
+        min-height: 100px;
+     }
+
+     /* Ajuste para la etiqueta de la estación en móviles */
+    .station-label {
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+     /* Ajuste específico para el título #indes en móviles */
+     #indes {
+         font-size: 1.4em;
+         margin-bottom: 15px;
+         padding-bottom: 5px;
+     }
+      .linea-info {
+         font-size: 0.8em;
+     }
+
+     /* Ajustes para la galería en móviles */
+     .gallery {
+         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+         gap: 10px;
+         margin-top: 15px;
+     }
+      .img-container {
+         padding: 3px;
+     }
+      .img-container img:hover {
+        transform: scale(1.03);
+     }
+
+     /* Ajustes para elementos de formulario en móviles */
+     .form-container {
+         padding: 15px;
+     }
+     /* Ajuste padding y margin-bottom de entradas dinámicas en móvil */
+     .victim-entry,
+     .data954-entry {
+         padding: 10px;
+         margin-bottom: 15px;
+     }
+     /* Ajuste margen separador hr en móvil */
+     .victim-entry hr,
+     .data954-entry hr {
+         margin: 15px 0;
+     }
+
+     .form-section {
+         margin-bottom: 1.5rem;
+         padding-bottom: 1rem;
+     }
+     /* form-section h2 size adjusted above */
+     .form-group {
+         margin-bottom: 0.8rem; /* Reducido aún más en móvil */
+     }
+     .form-group label {
+         font-size: 0.8em;
+         margin-bottom: 0.3rem;
+     }
+     .form-control, .form-select, .textarea {
+         font-size: 0.9em;
+         padding: 0.6rem;
+     }
+      .form-select {
+         padding-right: 2rem;
+         background-position: right 0.5rem center;
+         background-size: 0.9rem;
+      }
+      .btn-primary, .btn-secondary {
+         font-size: 0.95em;
+         padding: 10px 15px;
+      }
+      .btn-primary .icon, .btn-secondary .icon {
+         width: 1em;
+         height: 1em;
+         margin-right: 6px;
+      }
+      /* Ajuste grupo de botones del formulario en móvil */
+      .button-group {
+           flex-direction: column;
+           gap: 10px;
+      }
+      .button-group .btn-primary,
+      .button-group .btn-secondary {
+           width: 100%;
+           text-align: center;
+           justify-content: center;
+      }
+     /* Ajuste botón agregar en móvil */
+     .btn-secondary.add-button {
+         margin-top: 10px;
+     }
+
+
+      .preview-title {
+         font-size: 1em;
+         margin-bottom: 0.5rem;
+      }
+      #preview {
+         font-size: 0.8em;
+         min-height: 6rem;
+      }
+}
+
+/* Estilos específicos para pantallas medianas (entre 601px y 991px de ancho, ej: tablets) */
+@media (min-width: 601px) and (max-width: 991px) {
+    body {
+        margin: 15px;
+        font-size: 1em;
+    }
+    .container {
+         padding: 25px;
+         margin-bottom: 30px;
+    }
+     section {
+         padding: 20px;
+         margin-bottom: 25px;
+     }
+    h1 { font-size: 2.4em; }
+    .form-title { font-size: 2em; margin-bottom: 25px; padding-bottom: 10px; }
+    h2 { font-size: 1.9em; padding: 12px 0; margin-top: 25px; margin-bottom: 15px; }
+    /* .form-section h2 styles are fine here */
+
+    /* Ajuste tamaño y margen de h3 en entradas dinámicas en tablet */
+    .victim-entry h3,
+    .data954-entry h3 {
+        font-size: 1.2em;
+        margin-bottom: 1rem;
+    }
+
+    h3 { font-size: 1.6em; padding: 10px 0; margin-top: 20px; margin-bottom: 10px; }
+    h4 { font-size: 1.3em; padding: 8px 0; margin-top: 15px; margin-bottom: 8px; }
+
+    /* Lista de botones - muestra 2 columnas */
+    ul li {
+        width: calc(50% - 10px);
+    }
+     ul li button {
+        padding: 12px 20px;
+        font-size: 1.05em;
+     }
+     ul li button .logo-button {
+        width: 24px;
+        margin-right: 12px;
+     }
+
+    /* Ajustes para la cabecera en tablets */
+    header {
+        border-radius: 12px;
+        padding: 15px 10px;
+        margin-bottom: 35px;
+    }
+    header .datos {
+        font-size: 2em;
+    }
+    header .nav_1 a {
+        margin: 0 12px;
+    }
+     /* Ajustes para la galería en tablets */
+     .gallery {
+         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+         gap: 20px;
+         margin-top: 20px;
+     }
+      .img-container {
+         padding: 5px;
+      }
+      .img-container img:hover {
+        transform: scale(1.04);
+     }
+
+     /* Ajustes para formularios en tablets */
+     .form-container {
+         padding: 25px;
+     }
+     /* Ajuste padding y margin-bottom de entradas dinámicas en tablet */
+      .victim-entry,
+     .data954-entry {
+         padding: 15px;
+         margin-bottom: 20px;
+     }
+      /* Ajuste margen separador hr en tablet */
+     .victim-entry hr,
+     .data954-entry hr {
+         margin: 20px 0;
+     }
+
+     .form-section {
+         margin-bottom: 2rem;
+         padding-bottom: 1.5rem;
+     }
+     /* form-section h2 size adjusted above */
+     .form-group {
+         margin-bottom: 1rem; /* Reducido */
+     }
+     .form-group label {
+         font-size: 0.875em;
+         margin-bottom: 0.5rem;
+     }
+     .form-control, .form-select, .textarea {
+         font-size: 1em;
+         padding: 0.75rem;
+     }
+      .form-select {
+         padding-right: 2.5rem;
+         background-position: right 0.75rem center;
+         background-size: 1rem;
+      }
+      .btn-primary, .btn-secondary {
+         font-size: 1em;
+         padding: 12px 20px;
+      }
+      .btn-primary .icon, .btn-secondary .icon {
+         width: 1.2em;
+         height: 1.2em;
+         margin-right: 8px;
+      }
+      /* Ajuste grupo de botones del formulario en tablet */
+      .button-group {
+           gap: 15px;
+           /* flex-grow, text-align, justify-content handled */
+      }
+      /* Ajuste botón agregar en tablet */
+       .btn-secondary.add-button {
+           margin-top: 15px;
+       }
+
+
+      .preview-title {
+         font-size: 1.2em;
+         margin-bottom: 0.75rem;
+      }
+      #preview {
+         font-size: 0.875em;
+         min-height: 8rem;
+      }
+
+     /* Ajuste específico para el título #indes en tablets */
+      #indes {
+         font-size: 1.5em;
+         margin-bottom: 20px;
+         padding-bottom: 8px;
+     }
+      .linea-info {
+         font-size: 0.9em;
+     }
+}
+
+/* Estilos específicos para pantallas grandes (992px de ancho y más, ej: escritorios) */
+@media (min-width: 992px) {
+    body {
+        margin: 30px auto;
+        max-width: 1200px;
+        font-size: 1em;
+    }
+    .container {
+        padding: 30px;
+        margin-bottom: 40px;
+    }
+     section {
+         padding: 30px;
+         margin-bottom: 30px;
+     }
+     h1 { font-size: 2.8em; }
+     .form-title { font-size: 2.2em; margin-bottom: 30px; padding-bottom: 15px; }
+     h2 { font-size: 2.2em; padding: 15px 0; margin-top: 30px; margin-bottom: 20px; }
+     /* .form-section h2 styles are fine here */
+
+    /* Ajuste tamaño y margen de h3 en entradas dinámicas en escritorio */
+     .victim-entry h3,
+     .data954-entry h3 {
+         font-size: 1.3em;
+         margin-bottom: 1.2rem;
+     }
+
+     h3 { font-size: 1.8em; padding: 12px 0; margin-top: 25px; margin-bottom: 15px; }
+     h4 { font-size: 1.5em; padding: 10px 0; margin-top: 20px; margin-bottom: 10px; }
+
+    /* Lista de botones - muestra 3 columnas */
+     ul li {
+        width: calc(33.33% - 13.33px);
+     }
+     ul li button {
+        padding: 15px 25px;
+        font-size: 1.1em;
+     }
+     ul li button .logo-button {
+         width: 25px;
+         margin-right: 15px;
+     }
+
+     /* Ajustes para la cabecera en escritorios */
+     header {
+         border-radius: 15px;
+         padding: 20px 15px;
+         margin-bottom: 45px;
+     }
+     header .datos {
+         font-size: 2.2em;
+     }
+     header .nav_1 a {
+         margin: 0 15px;
+     }
+     /* Ajustes para la galería en escritorios */
+     .gallery {
+         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+         gap: 30px;
+         margin-top: 25px;
+     }
+      .img-container {
+         padding: 8px;
+      }
+      .img-container img:hover {
+        transform: scale(1.05);
+     }
+
+     /* Ajustes para formularios en escritorios */
+      .form-container {
+          /* max-width already set */
+      }
+     /* Ajuste padding y margin-bottom de entradas dinámicas en escritorio */
+      .victim-entry,
+      .data954-entry {
+          padding: 20px;
+          margin-bottom: 30px;
+      }
+      /* Ajuste margen separador hr en escritorio */
+      .victim-entry hr,
+      .data954-entry hr {
+          margin: 25px 0;
+      }
+
+
+      .funcionario-select {
+         padding: 10px;
+         font-size: 1em;
+      }
+      #listaFuncionarios, #consignasNovedades {
+         font-size: 1em;
+         padding: 12px;
+         min-height: 120px;
+      }
+       #consignasNovedades {
+        min-height: 150px;
+     }
+      /* Ajuste grupo de botones del formulario en escritorio */
+      .button-group {
+           gap: 20px;
+           /* flex-grow, width, text-align, justify-content handled */
+      }
+      /* Ajuste botón agregar en escritorio */
+      .btn-secondary.add-button {
+          margin-top: 20px;
+      }
+
+
+      #indes {
+         font-size: 1.6em;
+         margin-bottom: 20px;
+         padding-bottom: 8px;
+     }
+      .linea-info {
+         font-size: 1em;
+     }
+}
+
+
+
+/* CSS EXISTENTE */
+
 * {
   margin: 0;
   padding: 0;
@@ -73,3 +1149,4 @@ img {
   color: #4d5e7e;
   align-items: center;
 }
+
